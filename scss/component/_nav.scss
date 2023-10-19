@@ -1,0 +1,53 @@
+.nav	{
+	@include mq('desktop')	{
+		@include flexbox()	{
+			justify-content: flex-end;
+		};
+	}
+	
+	@include e(items)	{
+		
+		@include mq('mobile')	{
+			margin: 20px;
+		}
+		
+		@include mq('desktop')	{
+			margin-left: 12px;
+		}
+		
+		[href="#type"],
+		[href="#buttons"],
+		[href="#forms"],
+		[href="#images"],
+		[href="#grid"] 		{
+			@extend %links;
+			@extend %nav_items_links;
+
+			@include mq('mobile')	{
+				padding: 10px 20px;
+			}
+			@include mq('desktop')	{
+				padding: 10px;
+			}
+
+			&:hover	{
+				@extend %nav_items_active;
+			}
+		}
+		
+		[href="#type"]	{ //for the current page.
+			@extend %nav_items_active;
+		}
+
+		
+	}
+}
+
+.grid__col--9 .centered	{ //for navigation
+		@include mq('desktop'){
+			margin-right: 0;
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+		
+}

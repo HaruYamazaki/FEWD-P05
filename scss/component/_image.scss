@@ -1,0 +1,22 @@
+.img	{
+	@extend %img;
+	@include m(frame)	{
+		@extend %img;
+		align-self: center;
+	}
+	
+	@include m(avatar)	{
+		@extend %img;
+		align-self: center;
+	}
+	
+	@include m(logo)	{
+		@extend %img;
+		
+		@include mq('mobile')	{
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+	}
+	
+}
